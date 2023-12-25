@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+  max-width: 1000px;
+  /* border: 1px solid red; */
+}
+
+/* Read Field */
+
+.readContainer {
+  flex-grow: 1;
+  /* border: 1px solid blue; */
+}
+
+.readField {
+  width: 100%;
+  height: 25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  resize: none;
+  overflow-y: auto;
+}
+
+.readField:focus {
+  outline: none;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Load Button */
+
+.loadContainer {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid green; */
+}
+
+.load {
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: rgb(128, 128, 128);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, padding 0.2s, border-radius 0.2s;
+}
+
+.load:hover {
+  color: rgb(67, 67, 67);
+  border-color: rgb(96, 96, 96);
+}
+
+/* Needs proper clickEffect */

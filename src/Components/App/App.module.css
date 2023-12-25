@@ -1,0 +1,18 @@
+/* Universal Styles */
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/* App Styles */
+
+.App {
+  display: flex;
+  padding: 1rem;
+  /* border: 1px solid red; */
+}
