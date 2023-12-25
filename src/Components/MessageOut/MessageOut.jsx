@@ -20,7 +20,7 @@ function MessageOut() {
       // Add message to Firestore
       await addDoc(collection(db, "messages"), {
         text: message,
-        timestamp: new Date(), // Or use Firebase server timestamp
+        timestamp: new Date(), 
       });
       console.log("Message successfully submitted to Firestore.");
     } catch (error) {

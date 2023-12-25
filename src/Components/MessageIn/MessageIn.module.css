@@ -51,11 +51,12 @@
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s, padding 0.2s, border-radius 0.2s;
+  font-family: monospace;
 }
 
 .load:hover {
-  color: rgb(67, 67, 67);
-  border-color: rgb(96, 96, 96);
+  color: #000;
+  border-color: #000;
 }
 
 /* Needs proper clickEffect */
