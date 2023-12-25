@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MessageIn.module.css";
 import db from "../../firebase"; // Adjust the relative path as needed
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc } from "firebase/firestore";
 
 function MessageIn() {
   const [incomingMessage, setIncomingMessage] = useState("");
