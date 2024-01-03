@@ -17,16 +17,14 @@ function MessageOut() {
     }
 
     try {
-      // Add message to Firestore
       await addDoc(collection(db, "messages"), {
         text: message,
-        timestamp: new Date(), 
+        timestamp: new Date(),
       });
       console.log("Message successfully submitted to Firestore.");
     } catch (error) {
       console.error("Error submitting message: ", error);
     }
-
     setMessage("");
   };
 
@@ -42,7 +40,7 @@ function MessageOut() {
       </div>
       <div className={styles.submitContainer}>
         <button className={styles.submit} onClick={handleSubmit}>
-          Cast Message Away
+          Cast Your Message Away
         </button>
       </div>
     </div>
