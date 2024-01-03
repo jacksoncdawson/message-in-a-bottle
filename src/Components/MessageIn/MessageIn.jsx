@@ -1,35 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./MessageIn.module.css";
-import db from "../../firebase"; // Adjust the relative path as needed
-import { collection, getDocs, deleteDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  query,
+  orderBy,
+  limit,
+} from "firebase/firestore";
+import { doc } from "firebase/firestore";
+import db from "../../firebase";
 
 function MessageIn() {
   const [incomingMessage, setIncomingMessage] = useState("");
+  const [messageQueue, setMessageQueue] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const loadRandomMessage = async () => {
+  // pull messages on mount
+  useEffect(() => {
+    pullMessages();
+  }, []);
+
+  const pullMessages = async () => {
     try {
-      // Get a snapshot of the messages collection
-      const querySnapshot = await getDocs(collection(db, "messages"));
-      const messages = querySnapshot.docs.map((doc) => ({
+      setLoading(true);
+
+      const orderedQuery = query(
+        collection(db, "messages"),
+        orderBy("__name__"),
+        limit(30)
+      );
+
+      const snapshot = await getDocs(orderedQuery);
+      const messages = snapshot.docs.map((doc) => ({
         id: doc.id,
         text: doc.data().text,
       }));
 
-      // Filter out the currently displayed message if it exists
-      const newMessages = messages.filter(
-        (message) => message.text !== incomingMessage
+      setMessageQueue(messages);
+    } catch (error) {
+      console.error("Error loading messages:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadRandomMessage = async () => {
+    try {
+      if (messageQueue.length === 0) {
+        // If the messageQueue is empty, load a new set of messages
+        await pullMessages();
+      }
+
+      // If there are still no messages after attempting to load
+      if (messageQueue.length === 0) {
+        setIncomingMessage("No more messages available.");
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * messageQueue.length);
+      const randomMessage = messageQueue[randomIndex];
+
+      // Delete the message from the database
+      await deleteMessage(randomMessage.id);
+
+      // Update the local array by removing the chosen message
+      setMessageQueue((prevQueue) =>
+        prevQueue.filter((message) => message.id !== randomMessage.id)
       );
 
-      // Select a random message from the new list if there are any messages
-      if (newMessages.length > 0) {
-        const randomIndex = Math.floor(Math.random() * newMessages.length);
-        setIncomingMessage(newMessages[randomIndex].text);
-      } else {
-        setIncomingMessage("No new messages available.");
-      }
+      setIncomingMessage(randomMessage.text);
     } catch (error) {
-      console.error("Failed to load message:", error);
-      setIncomingMessage("Failed to load message.");
+      console.error("Error loading random message:", error);
+      setIncomingMessage("Error loading message. Please try again.");
+    }
+  };
+
+  const deleteMessage = async (messageId) => {
+    try {
+      // Delete the message from the database
+      await deleteDoc(doc(db, "messages", messageId));
+      console.log("Message deleted successfully.");
+    } catch (error) {
+      console.error("Error deleting message:", error);
     }
   };
 
@@ -39,13 +92,17 @@ function MessageIn() {
         <textarea
           className={styles.readField}
           value={incomingMessage}
-          placeholder="No message loaded..."
+          placeholder={loading ? "Loading..." : "No message loaded..."}
           readOnly={true}
         />
       </div>
       <div className={styles.loadContainer}>
-        <button className={styles.load} onClick={loadRandomMessage}>
-          Read New Message
+        <button
+          className={styles.load}
+          onClick={loadRandomMessage}
+          disabled={loading}
+        >
+          {loading ? "Loading..." : "Read New Message"}
         </button>
       </div>
     </div>
