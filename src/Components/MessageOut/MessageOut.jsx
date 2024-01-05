@@ -11,19 +11,20 @@ function MessageOut() {
   };
 
   const handleSubmit = async () => {
+    // Handle Empty Message
     if (message.trim() === "") {
       alert("Cannot submit an empty message.");
       return;
     }
-
+    
+    // Handle Message Submission
     try {
       await addDoc(collection(db, "messages"), {
         text: message,
-        timestamp: new Date(),
       });
-      console.log("Message successfully submitted to Firestore.");
+      alert("Message submitted!");
     } catch (error) {
-      console.error("Error submitting message: ", error);
+      alert("Error submitting message: ", error);
     }
     setMessage("");
   };

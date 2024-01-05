@@ -1,88 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./MessageIn.module.css";
 import {
   collection,
   getDocs,
-  deleteDoc,
+  doc,
   query,
-  orderBy,
   limit,
+  deleteDoc,
 } from "firebase/firestore";
-import { doc } from "firebase/firestore";
 import db from "../../firebase";
 
 function MessageIn() {
-  const [incomingMessage, setIncomingMessage] = useState("");
-  const [messageQueue, setMessageQueue] = useState([]);
+  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // pull messages on mount
-  useEffect(() => {
-    pullMessages();
-  }, []);
-
-  const pullMessages = async () => {
+  const pullMessage = async () => {
+    console.log("pullMessage");
     try {
       setLoading(true);
+      const messageQuery = query(collection(db, "messages"), limit(1));
+      const messageSnapshot = await getDocs(messageQuery);
 
-      const orderedQuery = query(
-        collection(db, "messages"),
-        orderBy("__name__"),
-        limit(30)
-      );
-
-      const snapshot = await getDocs(orderedQuery);
-      const messages = snapshot.docs.map((doc) => ({
+      const messageData = messageSnapshot.docs.map((doc) => ({
         id: doc.id,
         text: doc.data().text,
       }));
 
-      setMessageQueue(messages);
-    } catch (error) {
-      console.error("Error loading messages:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const loadRandomMessage = async () => {
-    try {
-      if (messageQueue.length === 0) {
-        // If the messageQueue is empty, load a new set of messages
-        await pullMessages();
-      }
-
-      // If there are still no messages after attempting to load
-      if (messageQueue.length === 0) {
-        setIncomingMessage("No more messages available.");
+      if (messageData.length === 0) {
+        setMessage("No message found...");
         return;
       }
 
-      const randomIndex = Math.floor(Math.random() * messageQueue.length);
-      const randomMessage = messageQueue[randomIndex];
-
-      // Delete the message from the database
-      await deleteMessage(randomMessage.id);
-
-      // Update the local array by removing the chosen message
-      setMessageQueue((prevQueue) =>
-        prevQueue.filter((message) => message.id !== randomMessage.id)
-      );
-
-      setIncomingMessage(randomMessage.text);
+      setMessage(messageData[0].text);
+      deleteDoc(doc(db, "messages", messageData[0].id));
     } catch (error) {
-      console.error("Error loading random message:", error);
-      setIncomingMessage("Error loading message. Please try again.");
-    }
-  };
-
-  const deleteMessage = async (messageId) => {
-    try {
-      // Delete the message from the database
-      await deleteDoc(doc(db, "messages", messageId));
-      console.log("Message deleted successfully.");
-    } catch (error) {
-      console.error("Error deleting message:", error);
+      console.error("Error pulling message: ", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -91,7 +45,7 @@ function MessageIn() {
       <div className={styles.readContainer}>
         <textarea
           className={styles.readField}
-          value={incomingMessage}
+          value={message}
           placeholder={loading ? "Loading..." : "No message loaded..."}
           readOnly={true}
         />
@@ -99,7 +53,7 @@ function MessageIn() {
       <div className={styles.loadContainer}>
         <button
           className={styles.load}
-          onClick={loadRandomMessage}
+          onClick={pullMessage}
           disabled={loading}
         >
           {loading ? "Loading..." : "Read New Message"}
