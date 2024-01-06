@@ -16,10 +16,6 @@ function MessageIn() {
   const [loading, setLoading] = useState(false);
   const [showImage, setShowImage] = useState(false);
 
-  const handleNoMessage = () => {
-    setShowImage(true);
-  };
-
   const pullMessage = async () => {
     try {
       setLoading(true);
@@ -32,7 +28,7 @@ function MessageIn() {
       }));
 
       if (messageData.length === 0) {
-        handleNoMessage();
+        setShowImage(true);
         return;
       } else {
         setShowImage(false);

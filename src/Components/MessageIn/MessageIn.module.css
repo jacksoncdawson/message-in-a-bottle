@@ -7,13 +7,15 @@
   max-width: 1000px;
 }
 
-/* Read Field - Message */
+/* Read Field */
 
 .readContainer {
   flex-grow: 1;
   height: 25rem;
   margin-bottom: 2rem;
 }
+
+/* Read Field -> Message */
 
 .readField {
   width: 100%;
@@ -32,7 +34,7 @@
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Read Field - No Messages */
+/* Read Field -> No Messages */
 
 .noMessagesContainer {
   display: flex;
@@ -43,6 +45,9 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: white;
 }
 
 .noMessagesContainer img {
