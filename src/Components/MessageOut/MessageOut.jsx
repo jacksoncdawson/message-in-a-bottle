@@ -16,6 +16,7 @@ function MessageOut() {
     }
   };
 
+  // Submit Handler (Add Message to Firestore)
   const handleSubmit = async () => {
     // Handle Empty Message
     if (message.trim() === "") {

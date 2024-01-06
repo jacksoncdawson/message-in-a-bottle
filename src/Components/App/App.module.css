@@ -4,6 +4,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  background-color: rgba(108, 194, 228, 0.518);
+}
+
 html,
 body {
   margin: 0;
@@ -13,6 +17,23 @@ body {
 
 .App {
   display: flex;
-  padding: 1rem;
-  /* border: 1px solid red; */
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+#signature {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-family: monospace;
+  color: white;
+  background-color: rgba(209, 39, 39, 0.884);
+  border-radius: 0.5rem;
 }
