@@ -6,8 +6,14 @@ import { collection, addDoc } from "firebase/firestore";
 function MessageOut() {
   const [message, setMessage] = useState("");
 
+  // Input Change Handler (Limit to 500 Characters)
   const handleInputChange = (event) => {
-    setMessage(event.target.value);
+    const inputText = event.target.value;
+    if (inputText.length > 500) {
+      setMessage(inputText.slice(0, 500));
+    } else {
+      setMessage(inputText);
+    }
   };
 
   const handleSubmit = async () => {
@@ -16,7 +22,7 @@ function MessageOut() {
       alert("Cannot submit an empty message.");
       return;
     }
-    
+
     // Handle Message Submission
     try {
       await addDoc(collection(db, "messages"), {
@@ -38,6 +44,7 @@ function MessageOut() {
           value={message}
           onChange={handleInputChange}
         />
+        <p>{message.length}/500</p>
       </div>
       <div className={styles.submitContainer}>
         <button className={styles.submit} onClick={handleSubmit}>
