@@ -9,13 +9,18 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import db from "../../firebase";
+import noMessageImage from "./barren-island.png";
 
 function MessageIn() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showImage, setShowImage] = useState(false);
+
+  const handleNoMessage = () => {
+    setShowImage(true);
+  };
 
   const pullMessage = async () => {
-    console.log("pullMessage");
     try {
       setLoading(true);
       const messageQuery = query(collection(db, "messages"), limit(1));
@@ -27,8 +32,10 @@ function MessageIn() {
       }));
 
       if (messageData.length === 0) {
-        setMessage("No message found...");
+        handleNoMessage();
         return;
+      } else {
+        setShowImage(false);
       }
 
       setMessage(messageData[0].text);
@@ -43,12 +50,23 @@ function MessageIn() {
   return (
     <div className={styles.container}>
       <div className={styles.readContainer}>
-        <textarea
-          className={styles.readField}
-          value={message}
-          placeholder={loading ? "Loading..." : "No message loaded..."}
-          readOnly={true}
-        />
+        {showImage ? (
+          <div className={styles.noMessagesContainer}>
+            <p>There are no messages...</p>
+            <img
+              src={noMessageImage}
+              alt="No Message"
+              className={styles.noMessageImage}
+            />
+          </div>
+        ) : (
+          <textarea
+            className={styles.readField}
+            value={message}
+            placeholder={loading ? "Loading..." : "No message loaded..."}
+            readOnly={true}
+          />
+        )}
       </div>
       <div className={styles.loadContainer}>
         <button
