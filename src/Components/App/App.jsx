@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./App.module.css";
-import MessageOut from "../MessageOut/MessageOut.jsx";
-import MessageIn from "../MessageIn/MessageIn.jsx";
+import MessageOutContainer from "../MessageOut/MessageOutContainer.jsx";
+import MessageInContainer from "../MessageIn/MessageInContainer.jsx";
 import Header from "../Header/Header.jsx";
 
 function App() {
@@ -9,10 +9,9 @@ function App() {
     <div className={styles.App}>
       <Header />
       <div className={styles.content}>
-        <MessageOut />
-        <MessageIn />
+        <MessageOutContainer />
+        <MessageInContainer />
       </div>
-      <p id={styles.signature}>Jack Dawson</p>
     </div>
   );
 }

@@ -25,15 +25,3 @@ body {
   margin-left: 15rem;
   margin-right: 15rem;
 }
-
-#signature {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 1rem;
-  padding: 0.5rem;
-  font-family: monospace;
-  color: white;
-  background-color: rgba(209, 39, 39, 0.884);
-  border-radius: 0.5rem;
-}
