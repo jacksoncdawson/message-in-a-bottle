@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./MessageIn.module.css";
 import {
   collection,
   getDocs,
@@ -9,9 +8,9 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import db from "../../firebase";
-import noMessageImage from "./barren-island.png";
+import MessageInView from "./MessageInView";
 
-function MessageIn() {
+function MessageInContainer() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [showImage, setShowImage] = useState(false);
@@ -44,37 +43,13 @@ function MessageIn() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.readContainer}>
-        {showImage ? (
-          <div className={styles.noMessagesContainer}>
-            <p>There are no messages...</p>
-            <img
-              src={noMessageImage}
-              alt="No Message"
-              className={styles.noMessageImage}
-            />
-          </div>
-        ) : (
-          <textarea
-            className={styles.readField}
-            value={message}
-            placeholder={loading ? "Loading..." : "No message loaded..."}
-            readOnly={true}
-          />
-        )}
-      </div>
-      <div className={styles.loadContainer}>
-        <button
-          className={styles.load}
-          onClick={pullMessage}
-          disabled={loading}
-        >
-          {loading ? "Loading..." : "Read New Message"}
-        </button>
-      </div>
-    </div>
+    <MessageInView
+      message={message}
+      loading={loading}
+      showImage={showImage}
+      pullMessage={pullMessage}
+    />
   );
 }
 
-export default MessageIn;
+export default MessageInContainer;

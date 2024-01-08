@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "./MessageOut.module.css";
-import db from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import db from "../../firebase";
+import MessageOutView from "./MessageOutView";
 
-function MessageOut() {
+function MessageOutContainer() {
   const [message, setMessage] = useState("");
 
   // Input Change Handler (Limit to 500 Characters)
@@ -37,23 +37,12 @@ function MessageOut() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.inputContainer}>
-        <textarea
-          className={styles.inputField}
-          placeholder="Write your message here..."
-          value={message}
-          onChange={handleInputChange}
-        />
-        <p>{message.length}/500</p>
-      </div>
-      <div className={styles.submitContainer}>
-        <button className={styles.submit} onClick={handleSubmit}>
-          Cast Your Message Away
-        </button>
-      </div>
-    </div>
+    <MessageOutView
+      message={message}
+      handleInputChange={handleInputChange}
+      handleSubmit={handleSubmit}
+    />
   );
 }
 
-export default MessageOut;
+export default MessageOutContainer;
