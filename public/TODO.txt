@@ -5,6 +5,5 @@
 - Include some nice animations?
 
 #
-- Dynamic screen compatibility
 - Fix submission feedback (alert --> ?)
 - Host Website
