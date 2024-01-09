@@ -2,16 +2,19 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 70vw;
   padding: 1rem;
-  margin: auto;
-  max-width: 1000px;
+  margin-right: 5vw;
+  margin-left: 1vw;
+  transition: all 0.2s ease;
 }
 
 /* Read Field */
 
 .readContainer {
   flex-grow: 1;
-  height: 25rem;
+  height: 50vh;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -20,7 +23,7 @@
 .readField {
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 0.75rem;
   box-sizing: border-box;
   font-size: 1rem;
@@ -34,34 +37,53 @@
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Text Wrap */
+@media screen and (max-width: 702px) {
+  .container {
+    margin-right: 1vw;
+    padding-left: 1vw;
+  }
+}
+
+@media screen and (max-width: 367px) {
+  .container {
+    margin-right: 1vw;
+    padding-left: 0.5vw;
+  }
+}
+
 /* Read Field -> No Messages */
 
 .noMessagesContainer {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background-color: white;
 }
 
 .noMessagesContainer img {
+  max-height: 100%;
+  max-width: 100%;
   width: auto;
   height: 100%;
   object-fit: contain;
   margin-top: 5rem;
+  transition: all 0.2s ease;
 }
 
 .noMessagesContainer p {
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace, Courier;
   font-size: 1.15rem;
   position: absolute;
-  top: 3.5rem;
+  top: 6vh;
+  text-align: center; 
 }
 
 /* Load Button */
@@ -72,7 +94,7 @@
 }
 
 .load {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 1.25rem;
   border: 1px solid #ccc;
   background-color: white;

@@ -7,6 +7,7 @@
   border-radius: 0.75rem;
   position: relative;
   border: 2px solid white;
+  min-width: 157px;
 }
 
 .container {
