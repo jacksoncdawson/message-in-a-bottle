@@ -17,6 +17,8 @@
   width: 100%;
   margin-bottom: 2rem;
   position: relative;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.75rem;
 }
 
 .inputContainer p {
@@ -77,8 +79,9 @@
   color: rgb(128, 128, 128);
   font-size: 1rem;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, padding 0.2s, border-radius 0.2s;
+  transition: all 0.1s;
   font-family: monospace;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .submit:hover {
@@ -86,9 +89,7 @@
   border-color: #000;
 }
 
-/* Needs proper clickEffect */
-
 .submit:active {
-  padding: 1.15rem;
-  border-radius: 0.85rem;
+  transform: scale(0.95); /* Slightly scales down the button */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Less shadow for pressed effect */
 }

@@ -20,7 +20,7 @@ function MessageOutContainer() {
   const handleSubmit = async () => {
     // Handle Empty Message
     if (message.trim() === "") {
-      alert("Cannot submit an empty message.");
+      // alert("Cannot submit an empty message.");
       return;
     }
 

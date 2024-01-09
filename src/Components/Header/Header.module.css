@@ -8,6 +8,7 @@
   position: relative;
   border: 2px solid white;
   min-width: 157px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -19,6 +20,7 @@
   border-radius: 0.5rem;
   border: 2px solid white;
   box-shadow: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .title {
