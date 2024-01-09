@@ -31,7 +31,7 @@ function MessageInView({ message, loading, showImage, pullMessage }) {
           onClick={pullMessage}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Read New Message"}
+          "Read New Message"
         </button>
       </div>
     </div>
