@@ -3,18 +3,13 @@
   flex-direction: column;
   width: 100%;
   max-width: 70vw;
-  padding: 1rem;
-  margin-right: 5vw;
-  margin-left: 1vw;
-  transition: all 0.2s ease;
+  padding: 1vw;
 }
 
 /* Read Field */
 
 .readContainer {
-  flex-grow: 1;
   height: 50vh;
-  width: 100%;
   margin-bottom: 2rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
@@ -37,21 +32,6 @@
 .readField:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Text Wrap */
-@media screen and (max-width: 702px) {
-  .container {
-    margin-right: 1vw;
-    padding-left: 1vw;
-  }
-}
-
-@media screen and (max-width: 367px) {
-  .container {
-    margin-right: 1vw;
-    padding-left: 0.5vw;
-  }
 }
 
 /* Read Field -> No Messages */
@@ -106,7 +86,8 @@
   transition: color 0.2s, border-color 0.2s, padding 0.2s, border-radius 0.2s;
   font-family: monospace;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.1s;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, color 0.2s,
+    border-color 0.2s, padding 0.2s, border-radius 0.2s;
 }
 
 .load:hover {

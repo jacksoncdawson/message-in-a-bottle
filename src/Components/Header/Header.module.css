@@ -1,18 +1,14 @@
 .headerBar {
-  display: flex;
-  align-items: flex-start;
+  display: flex; /* to keep background only around text */
   padding: 0.75rem;
   background-color: rgba(245, 211, 131, 0.843);
   margin: 1rem;
   border-radius: 0.75rem;
-  position: relative;
   border: 2px solid white;
-  min-width: 157px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-  position: relative;
+.titleContainer {
   display: flex;
   flex-direction: column;
   background-color: rgba(209, 39, 39, 0.884);
@@ -21,6 +17,7 @@
   border: 2px solid white;
   box-shadow: 1rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  min-width: 0;
 }
 
 .title {
@@ -29,6 +26,7 @@
   font-family: monospace;
   color: white;
   font-size: 1.5rem;
+  min-width: 0;
 }
 
 .subtitle {
@@ -36,4 +34,5 @@
   font-family: monospace;
   color: white;
   font-size: 1rem;
+  min-width: 0;
 }

@@ -3,10 +3,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 70vw;
-  padding: 1rem;
-  margin-right: 1vw;
-  margin-left: 5vw;
-  transition: all 0.2s ease;
+  padding: 1vw;
 }
 
 /* Input Field */
@@ -14,7 +11,6 @@
 .inputContainer {
   flex-grow: 1;
   height: 50vh;
-  width: 100%;
   margin-bottom: 2rem;
   position: relative;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -49,21 +45,6 @@
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Text Wrap */
-@media screen and (max-width: 702px) {
-  .container {
-    margin-left: 1vw;
-    padding-right: 1vw;
-  }
-}
-
-@media screen and (max-width: 367px) {
-  .container {
-    margin-left: 1vw;
-    padding-right: 0.5vw;
-  }
-}
-
 /* Submit Button */
 
 .submitContainer {
@@ -79,7 +60,8 @@
   color: rgb(128, 128, 128);
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.1s;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, color 0.2s,
+    border-color 0.2s, padding 0.2s, border-radius 0.2s;
   font-family: monospace;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -90,6 +72,6 @@
 }
 
 .submit:active {
-  transform: scale(0.95); /* Slightly scales down the button */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Less shadow for pressed effect */
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
