@@ -1,9 +1,6 @@
 ##
-- Better button animations?
 - Provide ability to see messages sent during session?
 - Legitimate developer credits under scroll?
-- Include some nice animations?
 
 #
-- Fix submission feedback (alert --> ?)
-- Host Website
+- Add submission Feedback

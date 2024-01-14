@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 70vw;
   padding: 1vw;
+  transition: all 0.2s ease;
 }
 
 /* Input Field */
@@ -11,7 +12,7 @@
 .inputContainer {
   flex-grow: 1;
   height: 50vh;
-  margin-bottom: 2rem;
+  margin-bottom: 2vh;
   position: relative;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
@@ -74,4 +75,16 @@
 .submit:active {
   transform: scale(0.95);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 363px) {
+  .container {
+    min-width: 80%;
+    height: 25vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+  .inputContainer {
+    margin-bottom: 1vh;
+  }
 }
