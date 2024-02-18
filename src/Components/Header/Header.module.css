@@ -1,38 +1,34 @@
 .headerBar {
-  display: flex; /* to keep background only around text */
-  padding: 0.75rem;
-  background-color: rgba(245, 211, 131, 0.843);
-  margin: 1rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	padding: var(--padding_header_bar);
+	background-color: var(--color_sand);
+	margin: 1rem;
+	border-radius: 0.75rem;
+	border: var(--border_std);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	min-width: auto;
 }
 
 .titleContainer {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(209, 39, 39, 0.884);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 2px solid white;
-  box-shadow: 1rem;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  min-width: 0;
+	background-color: var(--color_lobster);
+	padding: var(--padding_title_container);
+	border-radius: 0.5rem;
+	border: var(--border_std);
+	box-shadow: 0 1.5px 5px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
 }
 
 .title {
-  margin: 0;
-  padding-bottom: 0.3rem;
-  font-family: monospace;
-  color: white;
-  font-size: 1.5rem;
-  min-width: 0;
+	margin: 0;
+	padding-bottom: 0.3rem;
+	font-family: var(--font_family_std);
+	color: white;
+	font-size: var(--font_size_title);
 }
 
 .subtitle {
-  margin: 0;
-  font-family: monospace;
-  color: white;
-  font-size: 1rem;
-  min-width: 0;
+	margin: 0;
+	font-family: var(--font_family_std);
+	color: white;
+	font-size: var(--font_size_subtitle);
 }

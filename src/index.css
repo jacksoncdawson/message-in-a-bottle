@@ -1,0 +1,28 @@
+:root {
+	--color_sand: rgba(245, 211, 131, 0.843);
+	--border_std: 2px solid white;
+	--font_size_title: 1.75rem;
+	--font_size_subtitle: 1.25rem;
+	--font_family_std: monospace, sans-serif;
+	--color_lobster: rgba(209, 39, 39, 0.884);
+  --padding_header_bar: 0.7rem;
+  --padding_title_container: 0.7rem;
+}
+
+/* Smaller Screens */
+@media screen and (max-width: 1028px) {
+	:root {
+		--font_size_title: 1.5rem;
+		--font_size_subtitle: 1rem;
+	}
+}
+
+/* Mobile - Mobile-ish */
+@media screen and (max-width: 400px) {
+	:root {
+		--font_size_title: 1.1rem;
+		--font_size_subtitle: 0.7rem;
+    --padding_header_bar: 0.4rem;
+    --padding_title_container: 0.5rem;
+	}
+}

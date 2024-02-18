@@ -1,42 +1,22 @@
 /* Universal Styles */
 
 html {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 body {
-  background-color: rgba(108, 194, 228, 0.518);
+	background-color: rgba(108, 194, 228, 0.518);
 }
 
 html,
 body {
-  margin: 0;
+	margin: 0;
 }
 
 /* App Styles */
 
-.App {
-  display: flex;
-  flex-direction: column;
-}
-
 .content {
-  display: flex;
-  justify-content: space-around;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  transition: all 0.5s ease;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 max(20px, 5vw);
 }
-
-
-/* For Title Card */
-@media screen and (max-width: 363px) {
-  .App {
-    width: 363px;
-  }
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
