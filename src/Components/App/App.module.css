@@ -19,7 +19,7 @@ body {
 	.content {
 		flex-direction: column;
 		align-items: center;
-
+    padding-top: 5rem;
+    margin: 0 2vw;
 	}
 }
-

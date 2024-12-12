@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 70vw;
   padding: 1vw;
   transition: all 0.2s ease;
+  margin-bottom: 1rem;
 }
 
 /* Read Field */
@@ -67,36 +67,4 @@
   text-align: center;
   top: 1.5vh;
   z-index: 1;
-}
-
-/* Load Button */
-
-.loadContainer {
-  display: flex;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.load {
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  border: 1px solid #ccc;
-  background-color: white;
-  color: rgb(128, 128, 128);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, padding 0.2s, border-radius 0.2s;
-  font-family: monospace;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-.load:hover {
-  color: #000;
-  border-color: #000;
-}
-
-.load:active {
-  transform: scale(0.95); 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }

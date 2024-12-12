@@ -1,78 +1,47 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 70vw;
-  padding: 1vw;
-  transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1vw;
+	transition: all 0.2s ease;
+  margin-bottom: 1rem;
 }
 
 /* Input Field */
 
 .inputContainer {
-  flex-grow: 1;
-  height: 50vh;
-  margin-bottom: 2vh;
-  position: relative;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 0.75rem;
+	flex-grow: 1;
+	height: 50vh;
+	margin-bottom: 2vh;
+	position: relative;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 0.75rem;
 }
 
 .inputContainer p {
-  font-family: monospace, Courier;
-  color: rgb(128, 128, 128);
-  font-size: 0.75rem;
-  margin: 0;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+	font-family: monospace, Courier;
+	color: rgb(128, 128, 128);
+	font-size: 0.75rem;
+	margin: 0;
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
 }
 
 .inputField {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.75rem;
-  padding: 0.75rem;
-  box-sizing: border-box;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  resize: none;
-  overflow-y: auto;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.75rem;
+	padding: 0.75rem;
+	box-sizing: border-box;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	resize: none;
+	overflow-y: auto;
 }
 
 .inputField:focus {
-  outline: none;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Submit Button */
-
-.submitContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.submit {
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  border: 1px solid #ccc;
-  background-color: white;
-  color: rgb(128, 128, 128);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, color 0.2s,
-    border-color 0.2s, padding 0.2s, border-radius 0.2s;
-  font-family: monospace;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.submit:hover {
-  color: #000;
-  border-color: #000;
-}
-
-.submit:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	outline: none;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
