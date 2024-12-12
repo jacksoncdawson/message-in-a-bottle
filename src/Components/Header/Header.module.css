@@ -2,11 +2,10 @@
 	display: flex;
 	padding: var(--padding_header_bar);
 	background-color: var(--color_sand);
-	margin: 1rem;
+	margin: 1rem auto;
 	border-radius: 0.75rem;
 	border: var(--border_std);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	min-width: auto;
 }
 
 .titleContainer {
@@ -24,6 +23,7 @@
 	font-family: var(--font_family_std);
 	color: white;
 	font-size: var(--font_size_title);
+	white-space: nowrap;
 }
 
 .subtitle {
@@ -31,4 +31,16 @@
 	font-family: var(--font_family_std);
 	color: white;
 	font-size: var(--font_size_subtitle);
+}
+
+@media screen and (max-width: 480px) {
+  .titleContainer {
+    margin: 0 auto;
+  }
+	.title {
+		padding-bottom: 0rem;
+	}
+	.subtitle {
+		display: none;
+	}
 }
