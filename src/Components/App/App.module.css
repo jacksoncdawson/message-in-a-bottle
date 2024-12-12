@@ -5,14 +5,20 @@ html {
 }
 
 body {
-	background-color: rgba(108, 194, 228, 0.518);
+	background-color: var(--app-background-color);
+  margin: 0;
 }
 
 /* App Styles */
 
+.appArea {
+  margin: 0.5rem;
+}
+
 .content {
 	display: flex;
 	padding: 1rem;
+  margin-bottom: -5rem;
 }
 
 @media screen and (max-width: 480px) {

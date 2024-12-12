@@ -7,6 +7,9 @@
 	--color_lobster: rgba(209, 39, 39, 0.884);
 	--padding_header_bar: 0.7rem;
 	--padding_title_container: 0.7rem;
+  --app-background-color: rgba(108, 194, 228, 0.518);
+  --bio-background-color: #2080a6;
+  --font_size_copy: 0.75rem;
 }
 
 /* Smaller Screens */

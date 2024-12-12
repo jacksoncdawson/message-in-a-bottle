@@ -1,0 +1,47 @@
+.waveSVG {
+}
+
+.bioContainer {
+	background-color: var(--bio-background-color);
+	margin-top: -1rem;
+	padding: 1rem;
+}
+
+.title {
+	font-family: var(--font_family_std);
+	color: white;
+	font-size: var(--font_size_title);
+	margin: 0 0 1rem 0;
+}
+
+.bioCopy {
+	font-family: var(--font_family_std);
+	color: white;
+	font-size: var(--font_size_copy);
+	margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+	.waveSVG {
+		position: relative;
+		bottom: -10vw;
+		z-index: 0;
+	}
+	.bioContainer {
+		position: relative;
+		z-index: 1;
+		bottom: 0;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.waveSVG {
+		position: sticky;
+		bottom: -13vw;
+	}
+  .bioContainer {
+		position: relative;
+		z-index: 1;
+		bottom: 0;
+	}
+}
