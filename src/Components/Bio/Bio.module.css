@@ -22,16 +22,15 @@
 }
 
 .headshotWrapper {
-  position: relative;
-  overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 .headshot {
 	max-height: 100%;
 	max-width: 100%;
 	object-fit: cover;
-  transform: scale(0.8) translate(20px, -10px);
-
+	transform: scale(0.8) translate(20px, -10px);
 }
 
 .creditTitle {
