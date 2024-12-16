@@ -1,16 +1,47 @@
-.waveSVG {
+.bioContainer {
+	background: var(--color_bio_background);
+	margin-top: auto;
+	padding: 1rem;
 }
 
-.bioContainer {
-	background-color: var(--bio-background-color);
-	margin-top: -1rem;
+.bioContent {
+	display: flex;
 	padding: 1rem;
+}
+
+.leftSection {
+	flex: 2;
+	margin-right: 1rem;
+}
+
+.rightSection {
+	flex: 1;
+	margin-left: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.headshotWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.headshot {
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: cover;
+  transform: scale(0.8) translate(20px, -10px);
+
+}
+
+.creditTitle {
+	margin: 0 auto;
 }
 
 .title {
 	font-family: var(--font_family_std);
 	color: white;
-	font-size: var(--font_size_title);
+	font-size: var(--font_size_bio_title);
 	margin: 0 0 1rem 0;
 }
 
@@ -19,29 +50,4 @@
 	color: white;
 	font-size: var(--font_size_copy);
 	margin: 0;
-}
-
-@media screen and (min-width: 480px) {
-	.waveSVG {
-		position: relative;
-		bottom: -10vw;
-		z-index: 0;
-	}
-	.bioContainer {
-		position: relative;
-		z-index: 1;
-		bottom: 0;
-	}
-}
-
-@media screen and (min-width: 1440px) {
-	.waveSVG {
-		position: sticky;
-		bottom: -13vw;
-	}
-  .bioContainer {
-		position: relative;
-		z-index: 1;
-		bottom: 0;
-	}
 }

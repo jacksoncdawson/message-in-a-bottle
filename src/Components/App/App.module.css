@@ -5,27 +5,30 @@ html {
 }
 
 body {
-	background-color: var(--app-background-color);
-  margin: 0;
+	background-color: var(--color_app_background);
+	margin: 0;
 }
 
 /* App Styles */
 
+.App {
+	display: flex;
+	flex-direction: column;
+}
+
 .appArea {
-  margin: 0.5rem;
+	margin: 1.5vw;
 }
 
 .content {
 	display: flex;
-	padding: 1rem;
-  margin-bottom: -5rem;
 }
 
 @media screen and (max-width: 480px) {
 	.content {
 		flex-direction: column;
 		align-items: center;
-    padding-top: 5rem;
-    margin: 0 2vw;
+		padding-top: 5rem;
+		margin: 0 2vw;
 	}
 }

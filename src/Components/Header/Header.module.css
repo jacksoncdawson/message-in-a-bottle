@@ -2,7 +2,7 @@
 	display: flex;
 	padding: var(--padding_header_bar);
 	background-color: var(--color_sand);
-	margin: 1rem auto;
+  margin: 0 auto 1rem auto;
 	border-radius: 0.75rem;
 	border: var(--border_std);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);

@@ -34,7 +34,7 @@
 	border-radius: 0.75rem;
 	padding: 0.75rem;
 	box-sizing: border-box;
-	font-size: 1rem;
+	font-size: var(--font_size_message);
 	border: 1px solid #ccc;
 	resize: none;
 	overflow-y: auto;

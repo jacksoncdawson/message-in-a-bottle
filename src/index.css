@@ -1,31 +1,25 @@
 :root {
+	/* Colors */
 	--color_sand: rgba(245, 211, 131, 0.843);
-	--border_std: 2px solid white;
-	--font_size_title: 1.75rem;
-	--font_size_subtitle: 1.25rem;
-	--font_family_std: monospace, sans-serif;
 	--color_lobster: rgba(209, 39, 39, 0.884);
-	--padding_header_bar: 0.7rem;
-	--padding_title_container: 0.7rem;
-  --app-background-color: rgba(108, 194, 228, 0.518);
-  --bio-background-color: #2080a6;
-  --font_size_copy: 0.75rem;
-}
+	--color_app_background: rgba(108, 194, 228, 0.518);
+	--color_bio_background: #2080a6;
 
-/* Smaller Screens */
-@media screen and (max-width: 1028px) {
-	:root {
-		--font_size_title: 1.5rem;
-		--font_size_subtitle: 1rem;
-	}
-}
+	/* Font Size */
+  --font_size_title: clamp(1rem, 1.25rem + 0.5vw, 3.5rem);
+  --font_size_subtitle: clamp(1rem, 0.75rem + 0.6vw, 2rem);
 
-/* Mobile - Mobile-ish */
-@media screen and (max-width: 480px) {
-	:root {
-		--font_size_title: 1.1rem;
-		--font_size_subtitle: 0.7rem;
-		--padding_header_bar: 0.4rem;
-		--padding_title_container: 0.5rem;
-	}
+  --font_size_bio_title: clamp(1.25rem, 1.25rem + 0.5vw, 2.5rem);
+	--font_size_copy: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
+
+  --font_size_button: clamp(1rem, 0.75rem + 0.5vw, 1.5rem);
+  --font_size_message: clamp(1rem, 0.75rem + 0.5vw, 1.5rem);
+
+	/* Padding */
+	--padding_header_bar: clamp(0.25em, 0.25em + 0.5vw, 1.25em);
+	--padding_title_container: clamp(0.75em, 0.5em + 0.5vw, 1.5em);
+
+	/* Misc. */
+	--font_family_std: monospace, sans-serif;
+	--border_std: 2px solid white;
 }
