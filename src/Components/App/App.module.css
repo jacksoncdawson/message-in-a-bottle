@@ -1,24 +1,20 @@
 /* Universal Styles */
 
-html {
-	font-size: 16px;
+html,
+body {
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
 }
 
 body {
 	background-color: var(--color_app_background);
-	margin: 0;
 }
 
 /* App Styles */
-
-.App {
-	display: flex;
-	flex-direction: column;
-}
-
-.appArea {
-	margin: 1.5vw;
-}
 
 .content {
 	display: flex;
@@ -28,7 +24,7 @@ body {
 	.content {
 		flex-direction: column;
 		align-items: center;
-		padding-top: 5rem;
+		padding-top: 6rem;
 		margin: 0 2vw;
 	}
 }

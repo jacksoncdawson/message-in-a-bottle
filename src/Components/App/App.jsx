@@ -8,12 +8,10 @@ import BioContainer from "../Bio/BioContainer.jsx";
 function App() {
 	return (
 		<div className={styles.App}>
-			<div className={styles.appArea}>
-				<Header />
-				<div className={styles.content}>
-					<MessageOutContainer />
-					<MessageInContainer />
-				</div>
+			<Header />
+			<div className={styles.content}>
+				<MessageOutContainer />
+				<MessageInContainer />
 			</div>
 			<BioContainer />
 		</div>

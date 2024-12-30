@@ -6,7 +6,7 @@ const Header = () => {
 		<nav className={styles.headerBar}>
 			<div className={styles.titleContainer}>
 				<h1 className={styles.title}>Message in a Bottle</h1>
-				<p className={styles.subtitle}>Cast your messages away...</p>
+				<p className={styles.subtitle}>Cast your messages away</p>
 			</div>
 		</nav>
 	);

@@ -10,7 +10,7 @@
   --font_size_subtitle: clamp(1rem, 0.75rem + 0.6vw, 2rem);
 
   --font_size_bio_title: clamp(1.25rem, 1.25rem + 0.5vw, 2.5rem);
-	--font_size_copy: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem);
+	--font_size_copy: clamp(0.5rem, 0.5rem + 0.6vw, 1.5rem);
 
   --font_size_button: clamp(1rem, 0.75rem + 0.5vw, 1.5rem);
   --font_size_message: clamp(1rem, 0.75rem + 0.5vw, 1.5rem);
@@ -21,5 +21,7 @@
 
 	/* Misc. */
 	--font_family_std: monospace, sans-serif;
-	--border_std: 2px solid white;
+	--border_std: 0.2em solid white;
+  --border_radius: 0.75em;
+  --size_message-container: clamp();
 }

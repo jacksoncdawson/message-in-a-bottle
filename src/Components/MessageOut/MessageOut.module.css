@@ -21,7 +21,7 @@
 .inputContainer p {
 	font-family: monospace, Courier;
 	color: rgb(128, 128, 128);
-	font-size: 0.75rem;
+	font-size: calc(var(--font_size_message) / 1.2);
 	margin: 0;
 	position: absolute;
 	bottom: 0.5rem;

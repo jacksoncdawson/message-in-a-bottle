@@ -1,6 +1,6 @@
 ##
 - Provide ability to see messages sent during session?
-- Legitimate developer credits under scroll?
+- use "--border_radius" everywhere 
 
 #
 - Add submission Feedback
