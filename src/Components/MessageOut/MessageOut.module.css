@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 1vw;
+	padding: 1vw 2vw 1vw 1vw;
 	transition: all 0.2s ease;
 	margin-bottom: 1rem;
 }
@@ -10,9 +10,8 @@
 /* Input Field */
 
 .inputContainer {
-	flex-grow: 1;
-	height: 50vh;
-	margin-bottom: 2vh;
+	min-height: 45vh;
+	margin-bottom: clamp(1rem, 1rem + 1vw, 2vw);
 	position: relative;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	border-radius: 0.75rem;
@@ -44,4 +43,17 @@
 	outline: none;
 	border: 1px solid #ccc;
 	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+  .container {
+    height: clamp(30vh, 30vh + 10rem, 50vh);
+    padding: 1vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin-bottom: 2rem;
+  }
 }

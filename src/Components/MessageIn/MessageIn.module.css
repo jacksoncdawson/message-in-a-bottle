@@ -1,70 +1,77 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 1vw;
-  transition: all 0.2s ease;
-  margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1vw 1vw 1vw 2vw;
+	transition: all 0.2s ease;
+	margin-bottom: 1rem;
 }
 
 /* Read Field */
 
 .readContainer {
-  height: 50vh;
-  margin-bottom: 2vh;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: var(--border_radius);
+	min-height: 45vh;
+	margin-bottom: clamp(1rem, 1rem + 1vw, 2vw);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	border-radius: var(--border_radius);
 }
 
 /* Read Field -> Message */
 
 .readField {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border_radius);
-  padding: 0.75rem;
-  box-sizing: border-box;
-  font-size: var(--font_size_message);
-  border: 1px solid #ccc;
-  resize: none;
-  overflow-y: auto;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border_radius);
+	padding: 0.75rem;
+	box-sizing: border-box;
+	font-size: var(--font_size_message);
+	border: 1px solid #ccc;
+	resize: none;
+	overflow-y: auto;
 }
 
 .readField:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Read Field -> No Messages */
 
 .noMessagesContainer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: var(--border_radius);
-  background-color: white;
-  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: var(--border_radius);
+	background-color: white;
+	overflow: hidden;
 }
 
 .noMessagesContainer img {
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-  position: absolute;
-  top: 2vh;
-  transition: all 0.2s ease;
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: 100%;
+	object-fit: contain;
+	position: absolute;
+	top: 2vh;
+	transition: all 0.2s ease;
 }
 
 .noMessagesContainer p {
-  position: absolute;
-  font-family: monospace, Courier;
-  font-size: var(--font_size_message);
-  text-align: center;
-  top: 1.5vh;
-  z-index: 1;
+	position: absolute;
+	font-family: monospace, Courier;
+	font-size: var(--font_size_message);
+	text-align: center;
+	top: 1.5vh;
+	z-index: 1;
+}
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+	.container {
+		height: clamp(30vh, 30vh + 10rem, 50vh);
+		padding: 1vw;
+	}
 }

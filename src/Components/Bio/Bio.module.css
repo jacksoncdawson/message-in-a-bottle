@@ -3,7 +3,7 @@
 }
 
 .bioContent {
-  background: var(--color_bio_background);
+	background: var(--color_bio_background);
 	display: flex;
 	padding: calc(1em + 1vw);
 }
@@ -49,7 +49,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  justify-content: space-evenly;
+	justify-content: space-evenly;
 	background: var(--color_lobster);
 	padding: 1rem;
 	border: var(--border_std);
@@ -88,14 +88,14 @@
 /* SVG Wave */
 
 .wave {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .wave svg {
-  width: 100%;
-  height: 48px;
+	width: 100%;
+	height: 48px;
 }
 
 .wave .shapeFill {
-  fill: #2080A6;
+	fill: #2080a6;
 }
